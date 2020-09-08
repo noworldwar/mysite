@@ -1,0 +1,30 @@
+<div class="login">
+    <el-row :gutter="10">
+        <el-col>
+            <div class="grid-content" :xs="{padding:17}"></div>
+        </el-col>
+        <el-col :xs="{span:24,offset:0}" :sm="{span:16,offset:4}" :md="{span:12,offset:6}">
+            <div class="grid-content bg-purple-light login-box">
+                <h1>LOGIN</h1>
+                <el-form>
+                    <el-form-item>
+                        <el-input type="text" v-model="userID" placeholder="UserID" clearable />
+                    </el-form-item>
+                    <el-form-item>
+                        <el-input type="password" v-model="password" placeholder="Password" clearable />
+                    </el-form-item>
+                    <el-form-item>
+                        <el-input type="text" v-model="agentID" placeholder="AgentID" clearable />
+                    </el-form-item>
+                    token: {{token}}
+                    <br />
+                    <br />
+                    <el-button plain v-on:click="loginHandler">LOGIN</el-button>
+                </el-form>
+            </div>
+        </el-col>
+        <el-col>
+            <div class="grid-content"></div>
+        </el-col>
+    </el-row>
+</div>
