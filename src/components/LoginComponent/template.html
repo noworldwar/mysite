@@ -8,15 +8,15 @@
                 <h1>LOGIN</h1>
                 <el-form>
                     <el-form-item>
-                        <el-input type="text" v-model="userID" placeholder="UserID" clearable />
+                        <el-input type="text" v-model="username" placeholder="username" clearable />
                     </el-form-item>
                     <el-form-item>
                         <el-input type="password" v-model="password" placeholder="Password" clearable />
                     </el-form-item>
-                    <el-form-item>
-                        <el-input type="text" v-model="agentID" placeholder="AgentID" clearable />
-                    </el-form-item>
-                    token: {{token}}
+                    <div style="color: crimson;">
+                        {{message}}
+                    </div>
+                    
                     <br />
                     <br />
                     <el-button plain v-on:click="loginHandler">LOGIN</el-button>

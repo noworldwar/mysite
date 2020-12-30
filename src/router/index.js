@@ -2,10 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
+import store from '../store'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
@@ -28,6 +29,23 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes
+})
+
+router.beforeEach((to, from, next) => {
+
+  if (!store.state.status.loggedIn && to.path !== '/login') {
+    next({
+      path: '/login',
+      query: { redirect: to.fullPath }
+    })
+  } else if (store.state.status.loggedIn && to.path == '/login') {
+    next({
+      path: '/',
+      query: { redirect: to.fullPath }
+    })
+  } else {
+    next();
+  }
 })
 
 export default router
