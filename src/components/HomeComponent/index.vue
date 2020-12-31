@@ -6,7 +6,7 @@ export default {
   },
   data() {
     return {
-      userID: this.$cookies.get('userID'),
+      username: this.$cookies.get('username'),
     };
   },
 }

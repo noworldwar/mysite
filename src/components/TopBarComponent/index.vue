@@ -9,8 +9,8 @@ export default {
         path: "/",
       },
       {
-        name: "About",
-        path: "/about",
+        name: "Wallet",
+        path: "/wallet",
       },
     ];
     // console.log(routes);
@@ -20,7 +20,7 @@ export default {
   },
   methods: {
       logoutRequest: function() {
-          // this.$cookies.keys().forEach(cookie => this.$cookies.remove(cookie))
+          this.$cookies.keys().forEach(cookie => this.$cookies.remove(cookie))
           this.$store.commit("logout");
           // this.$router.push({path: '/login'})
       }
